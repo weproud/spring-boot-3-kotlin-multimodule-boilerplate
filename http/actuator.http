@@ -1,0 +1,3 @@
+### [actuator] actuator
+GET {{host}}/actuator/health
+Content-Type: application/json

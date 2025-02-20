@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: app-api
+  profiles:
+    group:
+      local: # 뒤쪽이 우선순위가 높음
+        - weproud-local
+        - rds-local
+        - redis-local
+        - provider-jwt-local
+      dev: # 뒤쪽이 우선순위가 높음
+        - weproud-dev
+        - rds-dev
+        - redis-dev
+        - provider-jwt-dev
+      prod: # 뒤쪽이 우선순위가 높음
+        - weproud-prod
+        - rds-prod
+        - redis-prod
+        - provider-jwt-prod
+    include: # 뒷쪽이 우선순위가 높음
+      - weproud
+      - rds
+      - redis
+      - provider-jwt
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: off
+  jpa:
+    open-in-view: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  info:
+    os:
+      enabled: true
+    java:
+      enabled: true
+
+logging:
+  level:
+    jdbc:
+      sqltiming: 'off'
+      audit: 'off'
+      connection: 'off'
+      resultset: 'off'
+      resultsettable: 'off'
+      sqlonly: info
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+    com:
+      weproud: info
+  file:
+    name: ./logs/app-api.log
+
+
+springdoc:
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    url: /docs/openapi3.yaml
+    path: /docs/swagger
+    operations-sorter: alpha
+
+

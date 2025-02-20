@@ -1,0 +1,16 @@
+spring:
+    config:
+        activate:
+            on-profile: weproud-local, weproud-dev
+weproud:
+    domain:
+        image: image.weproud.com
+
+
+---
+spring:
+    config:
+        activate:
+            on-profile: weproud-prod
+
+

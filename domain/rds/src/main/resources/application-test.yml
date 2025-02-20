@@ -1,0 +1,20 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: none
+        defer-datasource-initialization: true
+    datasource:
+        hikari:
+            driver-class-name: org.h2.Driver
+            jdbc-url: jdbc:h2:mem:db;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;NON_KEYWORDS=user
+            username: sa
+            password:
+            maximum-pool-size: 80
+            validation-timeout: 10000
+    flyway:
+        enabled: false
+        baseline-on-migrate: false
+    h2:
+        console:
+            enabled: true
+            path: /h2
