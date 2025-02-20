@@ -32,7 +32,7 @@ dependencies {
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
     testImplementation("com.epages:restdocs-api-spec-mockmvc:0.19.4")
 
-//    testImplementation(testFixtures(project(":domain:rds")))
+    testImplementation(testFixtures(project(":domain:rds")))
 }
 
 springBoot {

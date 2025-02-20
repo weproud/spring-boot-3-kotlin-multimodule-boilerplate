@@ -17,7 +17,8 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>[%contextName] [%d{yyyy.MM.dd HH:mm:ss.SSS}] [%-5level] [%thread] [%X{traceId:-startup}] - [%logger{5}] - %msg%n
+            <pattern>[%contextName] [%d{yyyy.MM.dd HH:mm:ss.SSS}] [%-5level] [%thread] [%X{traceId:-startup}] -
+                [%logger{5}] - %msg%n
             </pattern>
         </encoder>
     </appender>

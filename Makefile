@@ -13,4 +13,9 @@ clean:
 test:
 	./gradlew test
 
+openapi3:
+	./gradlew :app:app-api:openapi3
+
 done: clean lint test
+
+swagger: lint test openapi3

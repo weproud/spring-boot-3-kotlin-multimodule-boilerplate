@@ -18,7 +18,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer
 import java.time.Duration
 
 @EnableCaching
-@EnableRedisRepositories(basePackages = ["com.gguge.framework.redis"])
+@EnableRedisRepositories(basePackages = ["com.weproud.framework.cache"])
 @Configuration
 class RedisConfig(
     private val redisProperties: RedisProperties,

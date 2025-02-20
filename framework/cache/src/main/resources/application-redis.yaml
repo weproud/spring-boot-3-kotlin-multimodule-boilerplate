@@ -21,7 +21,7 @@ spring:
             on-profile: redis-local
     data:
         redis:
-            host: 127.0.0.1
+            host: localhost
 
 
 ---
@@ -31,7 +31,7 @@ spring:
             on-profile: redis-dev
     data:
         redis:
-            host: gguge-redis-development.t88ixf.ng.0001.apn2.cache.amazonaws.com
+            host: localhost
 
 ---
 spring:

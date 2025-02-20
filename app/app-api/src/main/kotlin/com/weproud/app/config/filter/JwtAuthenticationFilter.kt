@@ -8,13 +8,13 @@ import com.weproud.core.ObjectMapperFactory
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import java.io.IOException
 import mu.KotlinLogging
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.OncePerRequestFilter
+import java.io.IOException
 
 private val klogger = KotlinLogging.logger {}
 
@@ -27,7 +27,6 @@ class JwtAuthenticationFilter(
         filterChain: FilterChain,
     ) {
         try {
-
             resolveAuthorization(request)?.let { token ->
                 val userDetails = userDetailsService.loadUserByUsername(token)
                 SecurityContextHolder.getContext().authentication =

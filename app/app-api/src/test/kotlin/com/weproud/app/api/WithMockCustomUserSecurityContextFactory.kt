@@ -10,11 +10,12 @@ import org.springframework.security.test.context.support.WithSecurityContextFact
 class WithMockCustomUserSecurityContextFactory : WithSecurityContextFactory<WithMockCustomerUser> {
     override fun createSecurityContext(withMockCustomerUser: WithMockCustomerUser): SecurityContext {
         val context = SecurityContextHolder.createEmptyContext()
-        val principal = CustomUserDetails(
-            id = withMockCustomerUser.id,
-            email = withMockCustomerUser.email,
-            name = withMockCustomerUser.name,
-        )
+        val principal =
+            CustomUserDetails(
+                id = withMockCustomerUser.id,
+                email = withMockCustomerUser.email,
+                name = withMockCustomerUser.name,
+            )
         val auth: Authentication = UsernamePasswordAuthenticationToken(principal, "password", principal.authorities)
         context.authentication = auth
         return context

@@ -13,6 +13,6 @@ class CustomUserDetailsService(
 //        val user =
 //            userRepository.findByIdOrNull(username.toLong())
 //                ?: throw UserNotFoundException(username.toLong())
-        return CustomUserDetails(1L, "email", "username" )
+        return CustomUserDetails(1L, "email", "username")
     }
 }

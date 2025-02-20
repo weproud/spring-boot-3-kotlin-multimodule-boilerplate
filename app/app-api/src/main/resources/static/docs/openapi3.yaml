@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: APP API
+  description: APP API
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+tags: []
+paths:
+  /api/v1/posts:
+    get:
+      tags:
+      - api
+      summary: posts
+      description: posts
+      operationId: post-controller-test/get-posts
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/api-v1-posts486549215"
+              examples:
+                post-controller-test/get-posts:
+                  value: "[{\"id\":1,\"userId\":1,\"title\":\"title\",\"content\"\
+                    :\"content\",\"createdAt\":\"2025-02-20T15:27:43+09:00\",\"updatedAt\"\
+                    :\"2025-02-20T15:27:43+09:00\"},{\"id\":2,\"userId\":2,\"title\"\
+                    :\"title\",\"content\":\"content\",\"createdAt\":\"2025-02-20T15:27:43+09:00\"\
+                    ,\"updatedAt\":\"2025-02-20T15:27:43+09:00\"}]"
+  /api/v1/users/{id}:
+    get:
+      tags:
+      - api
+      summary: users
+      description: users
+      operationId: user-controller-test/get-users
+      parameters:
+      - name: id
+        in: path
+        description: ""
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/api-v1-posts486549215"
+              examples:
+                user-controller-test/get-users:
+                  value: "{\"id\":1,\"email\":\"email\",\"createdAt\":\"2025-02-20T15:27:43+09:00\"\
+                    ,\"updatedAt\":\"2025-02-20T15:27:43+09:00\"}"
+components:
+  schemas:
+    api-v1-posts486549215:
+      type: object

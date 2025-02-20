@@ -6,6 +6,7 @@ import com.weproud.app.config.logging.CachedBodyHttpServletRequest
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
+import mu.KotlinLogging
 import org.slf4j.MDC
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 import java.io.IOException
 import java.util.UUID
-import mu.KotlinLogging
 
 private val klogger = KotlinLogging.logger {}
 

@@ -23,12 +23,10 @@ class ExceptionControllerAdvice : ResponseEntityExceptionHandler() {
     fun handleApiException(ex: ApiException) = ResponseEntity.status(ex.status).body(ErrorResponse(ex.message!!))
 
     @ExceptionHandler(DomainRdsException::class)
-    fun handleDomainRdsException(ex: DomainRdsException) =
-        ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ErrorResponse(ex.message!!))
+    fun handleDomainRdsException(ex: DomainRdsException) = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ErrorResponse(ex.message!!))
 
     @ExceptionHandler(FrameworkClientException::class)
-    fun handleFrameworkClientException(ex: FrameworkClientException) =
-        ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ErrorResponse(ex.message!!))
+    fun handleFrameworkClientException(ex: FrameworkClientException) = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ErrorResponse(ex.message!!))
 
     @ExceptionHandler(Exception::class)
     fun handleException(ex: Exception): ResponseEntity<ErrorResponse> {

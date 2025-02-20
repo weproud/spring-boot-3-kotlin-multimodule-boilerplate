@@ -16,10 +16,8 @@ class Post(
     val id: Long = NEW_ID,
     @Column(name = "user_id", nullable = false)
     var userId: String,
-
     @Column(name = "title", nullable = false)
     var title: String,
-
     @Column(name = "content", nullable = false)
     var content: String,
 ) : BaseAuditEntity() {

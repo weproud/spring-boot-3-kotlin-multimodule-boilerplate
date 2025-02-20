@@ -5,7 +5,6 @@ import com.weproud.app.config.SecurityConfig
 import com.weproud.app.config.auth.CustomUserDetailsService
 import com.weproud.core.ObjectMapperFactory
 import io.mockk.junit5.MockKExtension
-import java.nio.charset.StandardCharsets
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
@@ -27,6 +26,7 @@ import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.filter.CharacterEncodingFilter
+import java.nio.charset.StandardCharsets
 
 @Import(SecurityConfig::class)
 @AutoConfigureMockMvc
@@ -66,21 +66,5 @@ open class ControllerTestSupport {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding(StandardCharsets.UTF_8.name())
                 .content(objectMapper.writeValueAsString(input)),
-        )
-
-    fun mockMvcGet(
-        api: String,
-        queryParams: Map<String, String> = emptyMap()
-    ): ResultActions =
-        mockMvc.perform(
-            RestDocumentationRequestBuilders.get(api)
-                .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
-                .characterEncoding(StandardCharsets.UTF_8.name())
-                .apply {
-                    queryParams.forEach { (key, value) ->
-                        this.param(key, value)
-                    }
-                }
         )
 }

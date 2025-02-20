@@ -1,16 +1,16 @@
 spring:
-    config:
-        activate:
-            on-profile: weproud-local, weproud-dev
+  config:
+    activate:
+      on-profile: weproud-local, weproud-dev
 weproud:
-    host:
-        image: image.weproud.com
+  host:
+    image: image.weproud.com
 
 
 ---
 spring:
-    config:
-        activate:
-            on-profile: weproud-prod
+  config:
+    activate:
+      on-profile: weproud-prod
 
 

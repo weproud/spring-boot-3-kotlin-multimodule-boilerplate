@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service
 class UserService(
     private val userRepository: UserRepository,
 ) {
-    fun getUser(authUser: CustomUserDetails, id: Long): UserResponse {
+    fun getUser(
+        authUser: CustomUserDetails,
+        id: Long,
+    ): UserResponse {
         val user = userRepository.findByIdOrNull(id) ?: throw UserNotFoundException(id)
         return UserResponse(
             id = user.id,
