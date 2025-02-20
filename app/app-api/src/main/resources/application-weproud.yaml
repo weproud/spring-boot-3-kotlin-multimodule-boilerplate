@@ -3,7 +3,7 @@ spring:
         activate:
             on-profile: weproud-local, weproud-dev
 weproud:
-    domain:
+    host:
         image: image.weproud.com
 
 

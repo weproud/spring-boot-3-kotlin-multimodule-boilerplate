@@ -1,0 +1,8 @@
+### [auth] users
+GET {{host}}/api/v1/users
+Content-Type: application/json
+
+### [auth] posts
+GET {{host}}/api/v1/posts
+Content-Type: application/json
+

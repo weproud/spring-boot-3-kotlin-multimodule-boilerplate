@@ -16,4 +16,6 @@ class User(
     val id: Long = NEW_ID,
     @Column(name = "email", nullable = false)
     var email: String,
+    @Column(name = "name", nullable = false)
+    var name: String,
 ) : BaseAuditEntity()

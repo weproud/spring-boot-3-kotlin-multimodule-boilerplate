@@ -9,17 +9,18 @@ import org.springframework.data.annotation.LastModifiedBy
 import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
 abstract class BaseAuditEntity {
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
-    val createdAt: LocalDateTime = LocalDateTime.now()
+    val createdAt: ZonedDateTime = ZonedDateTime.now()
 
     @LastModifiedDate
     @Column(name = "updated_at", nullable = false)
-    val updatedAt: LocalDateTime = LocalDateTime.now()
+    val updatedAt: ZonedDateTime = ZonedDateTime.now()
 
     @CreatedBy
     @Column(name = "created_by")

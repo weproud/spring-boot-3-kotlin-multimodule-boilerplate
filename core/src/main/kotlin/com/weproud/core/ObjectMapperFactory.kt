@@ -24,7 +24,6 @@ import kotlin.jvm.java
 object ObjectMapperFactory {
     fun objectMapper(): ObjectMapper =
         jacksonObjectMapper()
-            .findAndRegisterModules()
             .registerKotlinModule()
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
@@ -34,6 +33,7 @@ object ObjectMapperFactory {
                     .addSerializer(ZonedDateTime::class.java, ZonedDateTimeSerializer())
                     .addDeserializer(ZonedDateTime::class.java, ZonedDateTimeDeserializer()),
             )
+            .findAndRegisterModules()
 
     private class ZonedDateTimeSerializer : StdSerializer<ZonedDateTime>(ZonedDateTime::class.java) {
         @Throws(IOException::class)

@@ -22,4 +22,19 @@ class Post(
 
     @Column(name = "content", nullable = false)
     var content: String,
-) : BaseAuditEntity()
+) : BaseAuditEntity() {
+    companion object {
+        fun create(
+            userId: String,
+            title: String,
+            content: String,
+        ): Post {
+            return Post(
+                id = NEW_ID,
+                userId = userId,
+                title = title,
+                content = content,
+            )
+        }
+    }
+}
