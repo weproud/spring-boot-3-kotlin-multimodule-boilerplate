@@ -8,18 +8,6 @@ on:
                 description: 'ready?'
                 required: true
                 default: 'go'
-#  push:
-#    branches:
-#      - disable
-#    paths:
-#      - 'app/app-teacher-api/**'
-#      - 'core/**'
-#      - 'domain/**'
-#      - 'system/**'
-#      - build.gradle
-#      - settings.gradle
-#      - .github/workflows/dev-deploy-workflow-call.yml
-#      - dev-app-api.yml
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}

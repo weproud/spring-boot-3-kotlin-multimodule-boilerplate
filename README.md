@@ -137,3 +137,38 @@ class WithMockCustomUserSecurityContextFactory : WithSecurityContextFactory<With
     }
 }
 ```
+
+## github action
+
+```yaml
+
+name: "[dev] Deploy app-api"
+run-name: "[dev] Deploy app-api"
+
+on:
+    workflow_dispatch:
+        inputs:
+            what:
+                description: 'ready?'
+                required: true
+                default: 'go'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    deploy:
+        uses: ./.github/workflows/dev-deploy-workflow-call.yml
+        with:
+            environment: dev
+            EB_APPLICATION_NAME: app-api
+            EB_ENVIRONMENT_NAME: app-api-dev
+            APP_MODULE: :app:app-api
+            APP_MODULE_PATH: app/app-api
+            APP_GENERATE_OPENAPI: true
+        secrets: inherit
+
+---
+
+```
