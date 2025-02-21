@@ -55,6 +55,13 @@ subprojects {
         kapt("org.springframework.boot:spring-boot-configuration-processor")
 
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation("io.mockk:mockk:1.13.16")
+        testImplementation("com.ninja-squad:springmockk:4.0.2")
+        testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+        testImplementation("io.kotest:kotest-assertions-core:5.9.1")
+        testImplementation("io.kotest.extensions:kotest-extensions-spring:1.3.0")
+
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("org.assertj:assertj-core:3.27.3")
 
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
