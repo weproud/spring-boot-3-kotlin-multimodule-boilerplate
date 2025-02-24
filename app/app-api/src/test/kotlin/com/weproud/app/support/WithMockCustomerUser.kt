@@ -1,4 +1,4 @@
-package com.weproud.app.api
+package com.weproud.app.support
 
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.security.test.context.support.WithSecurityContext
@@ -8,6 +8,5 @@ import org.springframework.security.test.context.support.WithSecurityContext
 @WithSecurityContext(factory = WithMockCustomUserSecurityContextFactory::class)
 annotation class WithMockCustomerUser(
     val id: Long = 1L,
-    val email: String = "test@weproud.com",
     val name: String = "test",
 )

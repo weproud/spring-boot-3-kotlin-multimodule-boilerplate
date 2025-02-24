@@ -1,4 +1,4 @@
-package com.weproud.app.api
+package com.weproud.app.support
 
 import com.weproud.app.config.auth.CustomUserDetails
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -13,7 +13,6 @@ class WithMockCustomUserSecurityContextFactory : WithSecurityContextFactory<With
         val principal =
             CustomUserDetails(
                 id = withMockCustomerUser.id,
-                email = withMockCustomerUser.email,
                 name = withMockCustomerUser.name,
             )
         val auth: Authentication = UsernamePasswordAuthenticationToken(principal, "password", principal.authorities)

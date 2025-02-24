@@ -25,12 +25,9 @@ dependencies {
 
     runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.117.Final:osx-aarch_64")
 
-    testImplementation("io.mockk:mockk:1.13.16")
-    testImplementation("com.ninja-squad:springmockk:4.0.2")
-    testImplementation("org.springframework.security:spring-security-test")
-
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
     testImplementation("com.epages:restdocs-api-spec-mockmvc:0.19.4")
+    testImplementation("org.springframework.security:spring-security-test")
 
     testImplementation(testFixtures(project(":domain:rds")))
 }

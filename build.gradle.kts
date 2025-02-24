@@ -50,6 +50,7 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+        implementation("com.appmattus.fixture:fixture-kotest:1.2.0")
 
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
         kapt("org.springframework.boot:spring-boot-configuration-processor")
@@ -60,9 +61,6 @@ subprojects {
         testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
         testImplementation("io.kotest:kotest-assertions-core:5.9.1")
         testImplementation("io.kotest.extensions:kotest-extensions-spring:1.3.0")
-
-        testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("org.assertj:assertj-core:3.27.3")
 
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     }

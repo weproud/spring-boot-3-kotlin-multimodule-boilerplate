@@ -2,11 +2,11 @@ package com.weproud.app.api.user.v1
 
 import com.ninjasquad.springmockk.MockkBean
 import com.weproud.app.api.ControllerTestSupport
-import com.weproud.app.api.WithMockCustomerUser
 import com.weproud.app.api.andDocument
 import com.weproud.app.api.andExpectResponse
 import com.weproud.app.api.andExpectStatusOk
 import com.weproud.app.api.user.v1.dto.UserResponse
+import com.weproud.app.support.WithMockCustomerUser
 import io.mockk.every
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
