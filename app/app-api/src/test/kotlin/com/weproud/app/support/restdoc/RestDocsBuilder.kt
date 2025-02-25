@@ -1,5 +1,6 @@
 package com.weproud.app.support.restdoc
 
+import com.epages.restdocs.apispec.MockMvcRestDocumentationWrapper
 import org.springframework.restdocs.RestDocumentationContextProvider
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation
 import org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest
@@ -27,7 +28,7 @@ object RestDocsBuilder {
             .addFilter<DefaultMockMvcBuilder>(CharacterEncodingFilter("UTF-8", true))
             .alwaysDo<DefaultMockMvcBuilder>(MockMvcResultHandlers.print())
             .alwaysDo<DefaultMockMvcBuilder> { result ->
-                MockMvcRestDocumentation.document(
+                MockMvcRestDocumentationWrapper.document(
                     "{class-name}/{method-name}",
                     preprocessRequest(prettyPrint()),
                     preprocessResponse(prettyPrint()),
